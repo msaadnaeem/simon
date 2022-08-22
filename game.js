@@ -3,11 +3,12 @@ function random() {
 }
 
 const colors = ['green', 'red', 'yellow', 'blue']
-
+var started = false;
 var pattern = []
 var level = 1
 var click = 1
-var check=0
+var check = 0
+
 
 function genTile() {
   $("#level-title").text("Level " + level)
@@ -23,7 +24,12 @@ function genTile() {
   }, 250)
 }
 
-$("body").keydown(genTile)
+$("body").keydown(function () {
+  if (!started) {
+    genTile()
+    started = true;
+  }
+})
 
 $("div[type='button']").click(function () {
   const id = $(this).attr('id')
@@ -35,27 +41,30 @@ $("div[type='button']").click(function () {
   audio.play()
   if (click <= level) {
     if (pattern[check] === id) {
-      check++ 
+      check++
       click++
     }
     else {
       $("#level-title").text('Game Over, Press Any Key to Restart')
+      const audio = new Audio("sounds/wrong.mp3")
       $("body").addClass("game-over")
       setTimeout(function () {
         $("body").removeClass("game-over")
       }, 200)
-      pattern=[]
+      audio.play()
+      started = false
+      pattern = []
       level = 1
       click = 1
-      check=0
+      check = 0
     }
   }
-  console.log(click,level)
-  if ( click > level) {
+  console.log(click, level)
+  if (click > level) {
     console.log('i am in')
     level++
     click = 1
-    check=0
+    check = 0
     genTile()
   }
 });
