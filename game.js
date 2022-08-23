@@ -20,7 +20,7 @@ function genTile() {
       $("#" + id).removeClass("pressed");
     }, 250);
     audio.play();
-  }, 250);
+  }, 350);
 }
 
 $("#level-title").click(function () {
