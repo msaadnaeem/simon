@@ -24,7 +24,7 @@ function genTile() {
   }, 250)
 }
 
-$("body").keydown(function () {
+$("#level-title").click(function () {
   if (!started) {
     genTile()
     started = true;
@@ -45,7 +45,7 @@ $("div[type='button']").click(function () {
       click++
     }
     else {
-      $("#level-title").text('Game Over, Press Any Key to Restart')
+      $("#level-title").text('Game Over, Click Here to Restart')
       const audio = new Audio("sounds/wrong.mp3")
       $("body").addClass("game-over")
       setTimeout(function () {
