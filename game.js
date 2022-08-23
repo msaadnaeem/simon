@@ -52,11 +52,10 @@ $("div[type='button']").click(function () {
       ) {
         localStorage.setItem("score", level - 1);
       }
-      $("#level-title").text(
-        `Score: ${level - 1},High Score: ${localStorage.getItem(
-          "score"
-        )} Game Over, Click Here to Restart`
-      );
+      $("#level-title").text(`Game Over, Click Here to Restart`);
+      $("#score").text(`Score: ${level - 1}`);
+      $("#high-score").text(`High Score: ${localStorage.getItem("score")}`);
+
       const audio = new Audio("sounds/wrong.mp3");
       $("body").addClass("game-over");
       setTimeout(function () {
