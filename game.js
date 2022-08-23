@@ -13,13 +13,13 @@ function genTile() {
   $("#level-title").text("Level " + level);
   const id = colors[random()];
   pattern.push(id);
-  const audio = new Audio("sounds/" + id + ".mp3");
+//  const audio = new Audio("sounds/" + id + ".mp3");
   setTimeout(function () {
     $("#" + id).addClass("pressed");
     setTimeout(function () {
       $("#" + id).removeClass("pressed");
     }, 250);
-    audio.play();
+ //   audio.play();
   }, 350);
 }
 
@@ -34,12 +34,12 @@ $("div[type='button']").click(function () {
   const id = $(this).attr("id");
 
   if (started) {
-    const audio = new Audio("sounds/" + id + ".mp3");
+   // const audio = new Audio("sounds/" + id + ".mp3");
     $("#" + id).addClass("pressed");
     setTimeout(function () {
       $("#" + id).removeClass("pressed");
     }, 150);
-    audio.play();
+   // audio.play();
   }
   if (click <= level && started) {
     if (pattern[check] === id) {
