@@ -4,7 +4,7 @@ $('#yellow').css('opacity', 0)
 $('#green').css('opacity', 0)
 $('#blue').css('opacity', 0)
 $("#level-title").text("Click here \n to start");
-$("#score").text("How to play");
+$("#score").text("How to play:");
 $("#inst1").text("A color will flash. Repeat the sequence by pressing the same color.");
 $("#inst2").text("The game will continue. After each light sequence that you repeat successfully");
 $("#inst3").text("A light will be added to the end.");
