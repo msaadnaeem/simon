@@ -25,6 +25,8 @@ function genTile() {
 
 $("#level-title").click(function () {
   if (!started) {
+    $("#score").text("");
+    $("#high-score").text("");
     genTile();
     started = true;
   }
